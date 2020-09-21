@@ -29,7 +29,7 @@ int push(int* stack, int value) {
 
 int pop(int* stack) {
 	if (isEmpty()) return printf("Stack is empty\n");
-	else stack[top--] = 0;
+	else return stack[top--];
 }
 
 int isFull() {
