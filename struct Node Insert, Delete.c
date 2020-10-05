@@ -14,13 +14,15 @@ NodePointer head = NULL;
 
 int main() {
 	Insert(head, 1);
-	printf("%d", head->data);
 }
 
-int Search(NodePointer ptr, int value) {
-	int i;
-	for (i = 1; ptr->data != value; ptr->link) i++;
-	return i;
+int Search(int key) {
+	int count = 0;
+	for (NodePointer ptr = head; ptr->data != key; ptr = ptr->link) {
+		if (ptr->link == NULL) return -1;
+		count++;
+	}
+	return count;
 }
 //노드 삽입함수
 void Insert(NodePointer pre, int value) {
